@@ -80,3 +80,8 @@ def delete_book(request,id):
     cr_book = get_object_or_404(Book,id=id)
     cr_book.delete()
     return redirect("/")
+
+
+
+def home(request):
+    return redirect("/")

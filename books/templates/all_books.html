@@ -10,7 +10,7 @@
 <hr>
 <button> <a href="{% url 'env:add_book' %}"> add book </a></button>
 <button><a href="{% url 'env:admin' %}"> admin </a></button>
-<button><a href="{% url 'env1:author' %}"> author </a></button>
+<button><a href="{% url 'env1:author' %}"> add author </a></button>
 {% endcomment %}
 
 <!doctype html>
@@ -28,15 +28,19 @@
   <body>
 
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand">Home</a>
+        <a class="navbar-brand">LIBRARY</a>
         <form class="form-inline">
-        <a href="file:///G:/ITI/Client%20Side%20Technologies/BootStrap/lab1/loginPage.html" 
-        type="button" class=" btn btn-link form-control ">Login </a>
-        <a href="file:///G:/ITI/Client%20Side%20Technologies/BootStrap/lab1/registrationPage.html" 
-        type="button" class=" btn btn-link form-control ">SignUP</a>
+        <a href="{% url 'env:admin' %}"
+        type="button" class=" btn btn-link form-control ">admin </a>
+        <a  href="{% url 'env:add_book' %}" 
+        type="button" class=" btn btn-link form-control ">add book</a>
+        <a href="{% url 'env1:author' %}"
+        type="button" class=" btn btn-link form-control ">add author</a>
+        <a href="{% url 'env1:all_author' %}"
+        type="button" class=" btn btn-link form-control ">view authors</a>
         </form>
     </nav>
-    <h1>my first page</h1>
+    
     <div class="row">
         {% for book in all_books %}
         <div class="col-4 mt-4">
@@ -63,7 +67,7 @@
     <hr>
 <button> <a href="{% url 'env:add_book' %}"> add book </a></button>
 <button><a href="{% url 'env:admin' %}"> admin </a></button>
-<button><a href="{% url 'env1:author' %}"> author </a></button>
+<button><a href="{% url 'env1:author' %}"> add author </a></button>
 
   </body>
 </html>
